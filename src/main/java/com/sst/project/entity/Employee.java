@@ -1,6 +1,19 @@
 package com.sst.project.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Builder
 public class Employee {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long employeeId;
 	private String firstName;
 	private String lastName;
@@ -19,7 +32,7 @@ public class Employee {
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstName = firstName.toUpperCase();
 	}
 
 	public String getLastName() {
@@ -27,7 +40,7 @@ public class Employee {
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastName = lastName.toUpperCase();
 	}
 
 	public String getEmail() {
@@ -35,18 +48,8 @@ public class Employee {
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = email.toUpperCase();
 	}
 
-	public Employee(String firstName, String lastName, String email) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-	}
-
-	public Employee() {
-		super();
-	}
 
 }

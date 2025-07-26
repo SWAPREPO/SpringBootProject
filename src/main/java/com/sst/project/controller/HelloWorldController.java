@@ -19,11 +19,6 @@ public class HelloWorldController {
 		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(200,"Success","Get called at " + new Date()));
 	}
 	
-	@GetMapping("/test-get2")
-	private ResponseEntity<ApiResponse> testGetMapping2() {
-		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(200,"Success","Get called at " + new Date()));
-	}
-	
 	@GetMapping("/*")
 	private ResponseEntity<ApiResponse> defaultMapping() {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse(400,"Failed","URL does not exist"));
