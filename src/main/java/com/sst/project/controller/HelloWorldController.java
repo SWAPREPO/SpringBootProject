@@ -16,7 +16,7 @@ public class HelloWorldController {
 
 	@GetMapping("/test-get")
 	private ResponseEntity<ApiResponse> testGetMapping() {
-		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(200,"Success","Get called at " + new Date()));
+		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(200,"Success","Called test-get service at " + new Date()));
 	}
 	
 	@GetMapping("/*")
